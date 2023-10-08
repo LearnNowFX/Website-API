@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "sourceMap": true,
+    "target": "es2017",
+    "outDir": "./dist",
+    "incremental": true,
+    "declaration": true,
+    "skipLibCheck": false,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "strictBindCallApply": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@Constants/*": ["src/constants/*"],
+      "@Filters/*": ["src/filters/*"],
+      "@Guards/*": ["src/guards/*"],
+      "@Interfaces/*": ["src/interfaces/*"],
+      "@Modules/*": ["src/modules/*"],
+      "@Providers/*": ["src/providers/*"],
+      "@Services/*": ["src/services/*"],
+      "@Utilities/*": ["src/utilities/*"]
+    }
+  }
+}
