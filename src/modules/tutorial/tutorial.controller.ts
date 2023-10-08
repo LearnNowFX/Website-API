@@ -7,6 +7,6 @@ export class TutorialController {
 
   @Get("/")
   public getVideos() {
-    return this.tutorialService.getAll();
+    return this.tutorialService.getAllFromCache();
   }
 }

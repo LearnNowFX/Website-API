@@ -1,5 +1,3 @@
-import cheerio from "cheerio";
-
 export const extractVideoIdsFromYouTubeHTML = (html: string) => {
   // Define a regular expression to match "videoId" keys and their associated values
   const regex = /"videoId"\s*:\s*"([^"]+)"/g;
@@ -22,13 +20,19 @@ export const extractVideoIdsFromYouTubeHTML = (html: string) => {
 };
 
 export const extractVideoITitleFromYouTubeHTML = (html: string) => {
-  // Load the HTML into Cheerio
-  const $ = cheerio.load(html);
+  // Define a regular expression to match "videoId" keys and their associated values
+  const regex = /<title>([^<]+)<\/title>/g;
 
-  // Extract the title from the HTML
-  const title = $("title").text();
+  // Initialize an array to store the unique video IDs
+  let title = "";
 
-  console.log(title);
+  // Loop through all matches in the HTML using the regular expression
+  let match;
+
+  if ((match = regex.exec(html)) !== null) {
+    // Extract the video ID from the match and add it to the array if not already present
+    title = match[1];
+  }
 
   return title;
 };
