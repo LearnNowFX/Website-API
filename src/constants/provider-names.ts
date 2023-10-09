@@ -1,4 +1,5 @@
 export enum ProviderNames {
-  SEQUELIZE = "SEQUELIZE",
   YOUTUBE = "YOUTUBE",
+  GUMROAD = "GUMROAD",
+  SEQUELIZE = "SEQUELIZE",
 }
