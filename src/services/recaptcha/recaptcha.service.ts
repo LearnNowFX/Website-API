@@ -11,11 +11,12 @@ export class RecaptchaService {
   }
 
   public async verify(token: string) {
-    const response = await this.api.post(
-      "/siteverify",
-      {},
-      { params: { secret: process.env.RECAPTCHA_SECRET_KEY, response: token } }
-    );
+    const response = await this.api
+      .post("/siteverify", {}, { params: { secret: process.env.RECAPTCHA_PRIVATE_KEY, response: token } })
+      .catch((err) => {
+        console.log(err);
+        return null;
+      });
 
     return Boolean(response?.data?.success);
   }

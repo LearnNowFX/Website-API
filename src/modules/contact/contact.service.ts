@@ -5,5 +5,7 @@ import { SendMessageRequestDTO } from "./dto/send-message.dto";
 export class ContactService {
   constructor() {}
 
-  public async send(data: SendMessageRequestDTO) {}
+  public async send(data: SendMessageRequestDTO) {
+    console.log(data);
+  }
 }
