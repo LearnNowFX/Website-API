@@ -11,7 +11,7 @@ export class ProductService {
     this.cache = new GlobalizedCacheManager<IProduct[]>();
   }
 
-  private async getAll(): Promise<IProduct[]> {
+  private async getAll(): Promise<IProduct[] | null> {
     return this.gumroadService.getFormatedProducts();
   }
 
@@ -22,10 +22,12 @@ export class ProductService {
       return cached;
     }
 
-    const all = await this.getAll();
+    const data = await this.getAll();
 
-    this.cache.set("*", all);
+    if (data) {
+      this.cache.set("*", data);
+    }
 
-    return all;
+    return data;
   }
 }

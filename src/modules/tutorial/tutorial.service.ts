@@ -1,6 +1,6 @@
-import { IVideoDetails } from "@Interfaces/video-details.interface";
 import { Injectable } from "@nestjs/common";
 import { YoutubeService } from "@Services/youtube/youtube.service";
+import { IVideoDetails } from "@Interfaces/video-details.interface";
 import { GlobalizedCacheManager } from "@Utilities/cache-manager.utility";
 
 @Injectable()
@@ -22,10 +22,12 @@ export class TutorialService {
       return cached;
     }
 
-    const all = await this.getAll();
+    const data = await this.getAll();
 
-    this.cache.set("*", all);
+    if (data && data.length > 0) {
+      this.cache.set("*", data);
+    }
 
-    return all;
+    return data;
   }
 }

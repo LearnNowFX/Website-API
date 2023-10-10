@@ -6,5 +6,6 @@ export interface IProduct {
   description: string;
   tags: string[];
   free: boolean;
+  url: string;
   formatted_price: string;
 }

@@ -27,11 +27,11 @@ export class GumroadService {
       });
   }
 
-  public async getFormatedProducts(): Promise<IProduct[]> {
+  public async getFormatedProducts(): Promise<IProduct[] | null> {
     const data = await this.getProducts();
 
     if (!data) {
-      return [];
+      return null;
     }
 
     return formatProductResponse(data);
