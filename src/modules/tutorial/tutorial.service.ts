@@ -1,7 +1,7 @@
 import { IVideoDetails } from "@Interfaces/video-details.interface";
 import { Injectable } from "@nestjs/common";
 import { YoutubeService } from "@Services/youtube/youtube.service";
-import { GlobalizedCacheManager } from "@Utilities/cache-mamager.utility";
+import { GlobalizedCacheManager } from "@Utilities/cache-manager.utility";
 
 @Injectable()
 export class TutorialService {

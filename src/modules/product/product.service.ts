@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { IProduct } from "@Interfaces/product.interface";
 import { GumroadService } from "@Services/gumroad/gumroad.service";
-import { GlobalizedCacheManager } from "@Utilities/cache-mamager.utility";
+import { GlobalizedCacheManager } from "@Utilities/cache-manager.utility";
 
 @Injectable()
 export class ProductService {
